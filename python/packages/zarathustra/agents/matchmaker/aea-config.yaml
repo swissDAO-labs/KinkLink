@@ -1,0 +1,46 @@
+agent_name: matchmaker
+author: zarathustra
+version: 0.1.0
+license: Apache-2.0
+description: ''
+aea_version: '>=1.37.0, <2.0.0'
+fingerprint: {}
+fingerprint_ignore_patterns: []
+connections:
+- valory/abci:0.1.0:bafybeihkjtzuv3oaq5olerjwnhf5qg5gsmgdsvg27aaeqeg46ch7mjvggi
+- valory/http_client:0.23.0:bafybeidykl4elwbcjkqn32wt5h4h7tlpeqovrcq3c5bcplt6nhpznhgczi
+- valory/ipfs:0.1.0:bafybeihubpyw2t3bwncz3l7jt4gf5xvfydwmob463vvgf3ikkhlwxakm3m
+- valory/ledger:0.19.0:bafybeicgfupeudtmvehbwziqfxiz6ztsxr5rxzvalzvsdsspzz73o5fzfi
+- valory/p2p_libp2p_client:0.1.0:bafybeidwcobzb7ut3efegoedad7jfckvt2n6prcmd4g7xnkm6hp6aafrva
+contracts:
+- valory/gnosis_safe:0.1.0:bafybeib7yuiaggfibae3afoxugskxgf6aojgr7erfveizhp2jzqi4llg7i
+- valory/gnosis_safe_proxy_factory:0.1.0:bafybeiacuzzvjhuyjdvvb4bzj473nim4gtxqxh7qvzp2ytvhg66wvovqka
+- valory/service_registry:0.1.0:bafybeiaybq4z55o5tjnqhcsqhpttuldjf52yd54fkh6njngekhctvz3csi
+protocols:
+- open_aea/signing:1.0.0:bafybeifuxs7gdg2okbn7uofymenjlmnih2wxwkym44lsgwmklgwuckxm2m
+- valory/abci:0.1.0:bafybeig3dj5jhsowlvg3t73kgobf6xn4nka7rkttakdb2gwsg5bp7rt7q4
+- valory/acn:1.1.0:bafybeignmc5uh3vgpuckljcj2tgg7hdqyytkm6m5b6v6mxtazdcvubibva
+- valory/contract_api:1.0.0:bafybeidv6wxpjyb2sdyibnmmum45et4zcla6tl63bnol6ztyoqvpl4spmy
+- valory/http:1.0.0:bafybeifyoio7nlh5zzyn5yz7krkou56l22to3cwg7gw5v5o3vxwklibhty
+- valory/ipfs:0.1.0:bafybeic72ncgqbzoz2guj4p4yjqulid7mv6yroeh65hxznloamoveeg7hq
+- valory/ledger_api:1.0.0:bafybeibo4bdtcrxi2suyzldwoetjar6pqfzm6vt5xal22ravkkcvdmtksi
+- valory/tendermint:0.1.0:bafybeicusvezoqlmyt6iqomcbwaz3xkhk2qf3d56q5zprmj3xdxfy64k54
+skills:
+- valory/abstract_abci:0.1.0:bafybeicujajnqzbndtndrndj53znohemihludifuyc5dazfbz6fltyj5ci
+- valory/abstract_round_abci:0.1.0:bafybeiez7b6e2x3ssgwed57poqc2r3jzajpjaf5gn64l4qkpak5fjf2aye
+- valory/registration_abci:0.1.0:bafybeifthyilriits4iavbuf6mkhcho2vvg4xdeh3hnurwwxnzytmiutmu
+- valory/reset_pause_abci:0.1.0:bafybeih2m5cpxakcmfcb5y36wswie2polg5zpbq5dl4cpoonsy5grvml74
+- valory/transaction_settlement_abci:0.1.0:bafybeigfwfrhyfqtio6o2vtsw7fjmysuv7enscudum7qsvk7nuhlofxsry
+- zarathustra/kink_link_abci:0.1.0:bafybeigv6xcclm72iu4abf2xd7tai75tdhsntznk33xs24agfgkkfzwjhy
+default_ledger: ethereum
+required_ledgers:
+- ethereum
+default_routing: {}
+connection_private_key_paths: {}
+private_key_paths: {}
+logging_config:
+  disable_existing_loggers: false
+  version: 1
+dependencies:
+  open-aea-ledger-ethereum: {}
+default_connection: null
