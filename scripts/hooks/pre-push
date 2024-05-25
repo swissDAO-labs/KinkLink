@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+nox -f python/noxfile.py
+
+exit_code=$?
+if [[ $exit_code != 0 ]]; then
+    echo "Pre-push hook failed!"
+    exit $exit_code
+fi
+
+echo "Pre-push hook completed successfully."

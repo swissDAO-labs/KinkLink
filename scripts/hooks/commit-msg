@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Define the allowed commit message prefixes
+allowed_prefixes="feat|fix|test|refactor|docs|chore"
+
+# Define the maximum length for the commit message subject (first line)
+max_subject_length=72
+
+# Get the commit message from the user
+commit_message=$(cat $1)
+message_length=${#commit_message}
+
+# Check if the commit is a merge commit
+if git rev-parse --verify MERGE_HEAD >/dev/null 2>&1; then
+  exit 0
+fi
+
+# Check if the commit message starts with one of the allowed prefixes followed by a colon and a space
+if ! echo "$commit_message" | grep -Eq "^(($allowed_prefixes): )"; then
+  echo "Error: Commit message must start with one of the following prefixes followed by a colon and a space: $allowed_prefixes" >&2
+  exit 1
+fi
+
+if [ $message_length -gt $max_subject_length ]; then
+  echo "Error: Commit message subject length exceeds the maximum allowed length of $max_subject_length characters" >&2
+  exit 1
+fi
