@@ -1,0 +1,20 @@
+.*
+!.gitignore
+!.dockerignore
+!.pre-commit-config.yaml
+
+# WARNING:
+# The section between `# Clean` and `# End Clean` is used in Makefile for forceful removal
+
+# Clean
+*.pyc
+*.pyo
+__pycache__
+.coverage*
+coverage.xml
+htmlcov
+.pytest_cache
+.mypy_cache
+.ruff_cache
+.nox
+# End Clean
