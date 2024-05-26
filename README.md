@@ -9,8 +9,16 @@
 <!-- ## Introduction -->
 
 
-<!-- ## Requirements -->
+## Requirements
 
+- Git
+- Poetry
+- [Tendermint](https://docs.tendermint.com/v0.34/introduction/install.html) `==0.34.19`
+- Protoc v24.3
+
+```shell
+wget https://github.com/protocolbuffers/protobuf/releases/download/v24.3/protoc-24.3-linux-x86_64.zip && unzip protoc-24.3-linux-x86_64.zip -d protoc && sudo mv protoc/bin/protoc /usr/local/bin/protoc
+```
 
 <!-- ## Getting started -->
 

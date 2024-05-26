@@ -1,0 +1,24 @@
+name: fipa
+author: fetchai
+version: 1.0.0
+protocol_specification_id: fetchai/fipa:1.0.0
+type: protocol
+description: A protocol for FIPA ACL.
+license: Apache-2.0
+aea_version: '>=1.0.0, <2.0.0'
+fingerprint:
+  README.md: bafybeih776npzene2jytmixiwgq7xmla7yicp5qzqohbk74eewv6c5banu
+  __init__.py: bafybeibvmrfe36b2kdia3nbyz3y6aut2a7aul3rxshf62kzaxebjkjaxrm
+  custom_types.py: bafybeihzdd5m6h7y6xghpyzp54ddd6b2id7mj5qeafnnrg23tim45g6b2e
+  dialogues.py: bafybeiedwxxxvoozzvsei74eypmsxpt7li5pznoomzupzpavyo75jfffei
+  fipa.proto: bafybeibycv37qg5eesvmptehsg2uydyxh34fa2xiqgtjfqevhn2fg622ca
+  fipa_pb2.py: bafybeiduuzmhzytgq4yktpj4hvrhq626cuur56ic7tayqeu7r6itlxwmse
+  message.py: bafybeic3bgz7a2zgosgbzmdujv6phbdkv5hho6xigtwqcibabyrcmrdsby
+  serialization.py: bafybeigbuolf3jjjwybpqfncbfrbwggnxvo4l2pvraylda6v7r6izo72xe
+  tests/__init__.py: bafybeiejmbkzylap7xuv3wbduwwewybasdt6bxq3l3fkaoxazij2rgfre4
+  tests/test_fipa.py: bafybeihh37hqvueezb56enmpxbithkmboomitt3cxaent6lnlin7ijq5py
+  tests/test_fipa_dialogues.py: bafybeifw4ux7p5o7fxlbj2vhi4wbfrav3xcvtixnattdulthrmqhviiadi
+  tests/test_fipa_messages.py: bafybeiccxkxuy4tpnn7ksb43qah34mgakkmy43s4orxpmifyhu3ciettmm
+fingerprint_ignore_patterns: []
+dependencies:
+  protobuf: {}

@@ -24,7 +24,6 @@ from unittest import mock
 
 import pytest
 from _pytest.logging import LogCaptureFixture  # type: ignore
-
 from aea.common import Address
 from aea.mail.base import Envelope
 from aea.protocols.base import Message

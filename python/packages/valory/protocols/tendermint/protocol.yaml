@@ -14,10 +14,10 @@ fingerprint:
   dialogues.py: bafybeih3kwv3hqnc7qe7gwvsxj755e3pridoesfashknt3i4z7sra7mm6m
   message.py: bafybeiguo2x2vx5m3u6li4dl4fxomdjrtz63qkvpor22e2oq4hcj7r5pve
   serialization.py: bafybeigs3sxcgyv5qrvltwzjvqq3suxcj2dmvrptvvnfopfpcar3v3evj4
-  tendermint.proto: bafybeigyktjelrf5s2gwy4crn6b3ij2n2mdiggpauxtu2qnyjuykvrx35e
-  tendermint_pb2.py: bafybeicaac5o77uuim2epcdmpftge7cnwebnqwnua4dffgn7mdrzlmhlde
+  tendermint.proto: bafybeiaqoltnijwje7iog7s3r4nbtly6rbfp6zwb2btnrw7xuenoxtobui
+  tendermint_pb2.py: bafybeiay3q3pcvlitnhifh63vqkzvdyu4ywbbwj6vnoe5omqxmxg6gu25a
   tests/__init__.py: bafybeiguds53xs5tmygjd26a7xxilzdrgi2x262relfagdlvdzymacumie
-  tests/test_tendermint.py: bafybeiaaz2dtrzb56zu6gdu2oyfch6f3caxvqj7lkldzmd45gs2a3yvz7a
+  tests/test_tendermint.py: bafybeihnjxpkvgsclevn4bwi4qepw56vz554wox7gmhnjwobelbee7xpce
   tests/test_tendermint_dialogues.py: bafybeieoviq62cv62h4nglyr7qflzb32bjcvjbepmytgfpycuypnz3mriy
   tests/test_tendermint_messages.py: bafybeifqebxh5x5i5luiiypi6mqtcroejmb7ov6foj37ipfgqm7h5f5yve
 fingerprint_ignore_patterns: []
