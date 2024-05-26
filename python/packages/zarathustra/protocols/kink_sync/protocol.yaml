@@ -1,0 +1,21 @@
+name: kink_sync
+author: zarathustra
+version: 0.1.0
+protocol_specification_id: zarathustra/kink_sync:0.1.0
+type: protocol
+description: A protocol for peer-to-peer communication between agents.
+license: Apache-2.0
+aea_version: '>=1.0.0, <2.0.0'
+fingerprint:
+  __init__.py: bafybeic2qkcifbj23v7pzfoxe4ta6q3oeookttiehcpffbxatnibhky3ga
+  custom_types.py: bafybeig4ydfyqkahp3t5tmbj662qvew4rfl3i26qojtha4abg3oxkyx6fm
+  dialogues.py: bafybeibtnpt2vlsgv3foysms3txu53bvk35wigufmdt3mmtmn6yrcpo6jy
+  kink_sync.proto: bafybeigxljbknguedstkzww5ymuzp23zcuvngeepqcpx6cathl4jl6b2ku
+  kink_sync_pb2.py: bafybeid4r53bouiiqfwnrhel7gqvdsub7ftb3owrndurr436t5bmitglri
+  message.py: bafybeid7mqik3qyaoia4nu4mepxekgnvxmavwvcdy3ilk3haguoqoeuri4
+  serialization.py: bafybeid2flswwtcbulj4lflh3lei3kj4tjprggjwgu4zk2zuqhhmjn3noy
+  tests/test_kink_sync_dialogues.py: bafybeigxlk54sofydm3pvsjamdp6tutljep423opco55b5ssqjrary3x2i
+  tests/test_kink_sync_messages.py: bafybeiax3c4z3hmh6ae6sklv7exvla2cu6f2xqjasls766xmwkdm2vuxau
+fingerprint_ignore_patterns: []
+dependencies:
+  protobuf: {}
