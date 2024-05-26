@@ -105,6 +105,9 @@ and run
 aea -s run
 ```
 
+## Ressources
+Google Docs with more Details: 
+https://docs.google.com/document/d/18WUKydpGv_AKMSOn2-HKAnPyjYZ-PGsUb05fu3akfec/edit?usp=sharing
 
 ## Contributing
 Learn how to contribute to the project by following the guidelines in [CONTRIBUTING.md](CONTRIBUTING.md).
