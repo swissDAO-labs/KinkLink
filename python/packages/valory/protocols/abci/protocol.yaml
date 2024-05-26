@@ -8,16 +8,16 @@ license: Apache-2.0
 aea_version: '>=1.0.0, <2.0.0'
 fingerprint:
   README.md: bafybeia5y34dgznojhabsw7js2auxzmwxoubs2yacvscvoqkmt323d3npq
-  __init__.py: bafybeidyj3jxy544bgbo45v4tox4rz5msrqmwgnn26hbtoqoiwvvgwzf54
-  abci.proto: bafybeid2kv4fy6xx453apqxashnqfjymhbrvtxj3uq2vdtqr45lvlfjzm4
-  abci_pb2.py: bafybeihged4uxj35ilybe3jaephddceqrk4taztfq4ytyf7wgs4ve2u66e
+  __init__.py: bafybeigdywrj2szik3yvkpnouvsdwna2c3w6txzfyxqgqvmq3brhy2guqy
+  abci.proto: bafybeihuggaywmaqgmupxsschc2doenmzlb3t4rgkf662gcqn4md6c3fby
+  abci_pb2.py: bafybeibmtekdibi52ngzz7fcwb5ka6uexyzcl6kgao2kffoyauirqjstoa
   custom_types.py: bafybeihpkluue4c7cunrcaxze3pqexhmwxkybrv4c3bzmkkakze7n6v44a
-  dialogues.py: bafybeiatyk6bgdw36clk5q6pqzoow7owjppwgmjyn7ofamg5urcwdu7mqy
-  message.py: bafybeib3iyxwrkq3f3qpfhm6bsfhsjdkrnjfvyoeqg35s46h2uafvrlvxq
-  serialization.py: bafybeifralovb766v2sl5gmxaqr7xz7srbrzsixrr4nzseptkwgddph5e4
+  dialogues.py: bafybeihllufuvxtzb6vtz7qbsxqoyboaxik7lacwrbqfl4wfdzkfiv35de
+  message.py: bafybeifyexp6v5ajzqtuneknamnhhcobnaekbsbo3uq2xlu6a2lpfavfjm
+  serialization.py: bafybeifxcjzfh2gunnxqolvpnzwgwafxf33pac76xlow2e4r67lmvtcbli
   tests/__init__.py: bafybeie4cd5xo7o4teyfjclaju3zoguuahjvkpsbshda3x23jcph53fdpi
   tests/conftest.py: bafybeidomydt6bdji22rndrdb5w773vvdja55o5m5n4pbfslx7ey5euot4
-  tests/test_abci.py: bafybeig4gex7e62uxca7riaetmr2pu5xekxg3d7xjvck72zjd3uxny4v64
+  tests/test_abci.py: bafybeidnuf5rzt6z3k4pzoljj3emksrabhtvubzhjjcxumar3q34e7ci3m
   tests/test_abci_dialogues.py: bafybeiby6ahpj6dnvjagnyyew3hgncstay37tt3xqu5x2c2yx3nldwvzzi
   tests/test_abci_messages.py: bafybeidbec7g3gvyr4jon57m6pfcobslj3nvnnynzeib3mgvm46d3ywdgi
 fingerprint_ignore_patterns: []

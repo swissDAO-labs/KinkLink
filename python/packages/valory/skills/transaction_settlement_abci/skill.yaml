@@ -33,12 +33,12 @@ connections: []
 contracts:
 - valory/gnosis_safe:0.1.0:bafybeib7yuiaggfibae3afoxugskxgf6aojgr7erfveizhp2jzqi4llg7i
 protocols:
-- open_aea/signing:1.0.0:bafybeifuxs7gdg2okbn7uofymenjlmnih2wxwkym44lsgwmklgwuckxm2m
-- valory/abci:0.1.0:bafybeig3dj5jhsowlvg3t73kgobf6xn4nka7rkttakdb2gwsg5bp7rt7q4
-- valory/contract_api:1.0.0:bafybeidv6wxpjyb2sdyibnmmum45et4zcla6tl63bnol6ztyoqvpl4spmy
-- valory/ledger_api:1.0.0:bafybeibo4bdtcrxi2suyzldwoetjar6pqfzm6vt5xal22ravkkcvdmtksi
+- open_aea/signing:1.0.0:bafybeief7fggtf2fbfypp4zgveuf5i6hfm6yok4znui46d4vnhcizy3rni
+- valory/abci:0.1.0:bafybeicoonjmq6nsmfufjb3ptehgcwpumv33tou5uky5h5dspgz5au57gm
+- valory/contract_api:1.0.0:bafybeihqr4usba3ybaifa6yjsnhoi7k57jjm5nl6ughplszoqzs3xnj25i
+- valory/ledger_api:1.0.0:bafybeiclbj2il5iknwhg52cef6gebwxbvl2vtpsbikkfek5o2lsakvh36y
 skills:
-- valory/abstract_round_abci:0.1.0:bafybeiez7b6e2x3ssgwed57poqc2r3jzajpjaf5gn64l4qkpak5fjf2aye
+- valory/abstract_round_abci:0.1.0:bafybeicwivftjnjrvazvdocsfqp2f2njletxr7vf4t5o6cbui6hp7byd5q
 behaviours:
   main:
     args: {}
