@@ -1,0 +1,52 @@
+name: counter_client
+author: valory
+version: 0.1.0
+type: skill
+description: A client for the ABCI counter application.
+license: Apache-2.0
+aea_version: '>=1.0.0, <2.0.0'
+fingerprint:
+  README.md: bafybeib6zaiamsyuuppq5kflgsxk774mq44ttumidbixtaflt2fmfjcqtu
+  __init__.py: bafybeifeclzvhjxlghtaxvhlgfetavrz4rclfxsjmcte4xa2esbjfwukma
+  behaviours.py: bafybeid6py6gazkimylw46glq7jppmsjgi7gk3s57gn75vy7sty2pwaedm
+  dialogues.py: bafybeiahxvjlluahjjso62e2ff2ruqm6bef2hbo4bg4nxedxwvbagoehyu
+  handlers.py: bafybeiejpkauifnfgffry6qepsjsugsxwilz4ggjetqcob5uanm3ikyiea
+  models.py: bafybeigbcriciq77fdsp4k3qd7utq5vo7blxgm47ghiqusccrl2i75o7pa
+  tests/__init__.py: bafybeico62tplfccctl7o2ixzpzpysjk5klj36nlk4uqqwzqxc5xrx2ldu
+  tests/test_behaviours.py: bafybeidutht7h64cn3nw3edwbqfvoksgwptp7dinscmkvxehzipyff5pfu
+  tests/test_models.py: bafybeiawp6qj3nmecv3xj4lq7abcs2robysnwr6ekxtscefyqfo7zgfmwa
+  utils.py: bafybeihrzltjkh2pfkctsuanhtx234bwcqh6vdabkxzmp7qoyva3om5x7m
+fingerprint_ignore_patterns: []
+connections:
+- valory/http_client:0.23.0:bafybeihi772xgzpqeipp3fhmvpct4y6e6tpjp4sogwqrnf3wqspgeilg4u
+contracts: []
+protocols:
+- valory/http:1.0.0:bafybeifugzl63kfdmwrxwphrnrhj7bn6iruxieme3a4ntzejf6kmtuwmae
+skills: []
+behaviours:
+  incrementer:
+    args:
+      tick_interval: 3
+    class_name: IncrementerBehaviour
+  monitor:
+    args:
+      tick_interval: 1
+    class_name: MonitorBehaviour
+handlers:
+  http_handler:
+    args: {}
+    class_name: HttpHandler
+models:
+  http_dialogues:
+    args: {}
+    class_name: HttpDialogues
+  params:
+    args:
+      tendermint_url: localhost:26657
+    class_name: Params
+  state:
+    args: {}
+    class_name: State
+dependencies: {}
+is_abstract: false
+customs: []

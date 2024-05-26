@@ -1,0 +1,23 @@
+name: state_update
+author: fetchai
+version: 1.0.0
+protocol_specification_id: fetchai/state_update:1.0.0
+type: protocol
+description: A protocol for state updates to the decision maker state.
+license: Apache-2.0
+aea_version: '>=1.0.0, <2.0.0'
+fingerprint:
+  README.md: bafybeieh3nvfgvwdybc7dz44ac3qhleeleaojmwo32o3nticdw24ltdekq
+  __init__.py: bafybeihg5xposbfnpqkm7jhzafsztnizzw6plxtdxpvds4nzd5m3l7ieuu
+  dialogues.py: bafybeiet4icgzq3ast2cdkca3t2sdlslvkerpet2ml236xegrsgn5lrtvi
+  message.py: bafybeiebwe4jw7s7aoyj2ffmm3pqhkshdje7qcenlkyutzjy5gem5kr62u
+  serialization.py: bafybeihmj2i6c2etiaqo3u2yv4mogdbx6slzfxvjjooikxlaacmku3a45u
+  state_update.proto: bafybeifb4w4hhbfulbsj3uoazthtcywhqkxabhtztwycsx3dtsmq6x43re
+  state_update_pb2.py: bafybeigxg6dl2sgh2ivlu6my5osijmkkd6rl4ntrdzwd5tv7dwf5zdl73m
+  tests/__init__.py: bafybeicf4p3m6qv3qkvd3ahxemeslvkrzjegetayjwrvjoch4ajoqezgpq
+  tests/test_state_update.py: bafybeicjeibmkt2tsq2qqdmk7xqtkslrk7yavcr3vm7jnytgiog4he5feq
+  tests/test_state_update_dialogues.py: bafybeiadrik76dnme5r3b2idoso3mbygbg245pprphgolifofoig6sxh6i
+  tests/test_state_update_messages.py: bafybeibnquco7j2jkw3g4dfw5cpzxvvfpy4clbiqh3yshf3plshfwnzvy4
+fingerprint_ignore_patterns: []
+dependencies:
+  protobuf: {}

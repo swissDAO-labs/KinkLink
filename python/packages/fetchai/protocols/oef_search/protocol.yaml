@@ -1,0 +1,24 @@
+name: oef_search
+author: fetchai
+version: 1.0.0
+protocol_specification_id: fetchai/oef_search:1.0.0
+type: protocol
+description: A protocol for interacting with an OEF search service.
+license: Apache-2.0
+aea_version: '>=1.0.0, <2.0.0'
+fingerprint:
+  README.md: bafybeibwimlpsr55jdty46gmhzvptw3g4rvmcyobdogdsirwwnglcycw6u
+  __init__.py: bafybeid6nqidrzeocsravsa7z54uhlkydxm5zt4pu5gf6lat4un7xh6sou
+  custom_types.py: bafybeihxd2m5g4fi5yr3t2zyvjem7qzu6tyuelecr6siinaur2cqxn4xky
+  dialogues.py: bafybeigdqzmglfkgvy472t76rfkh6ip4bbqtwon7zzsjte3bl4sibparcu
+  message.py: bafybeibvelkmc3kipimtm57slhmhtxnqqfrxv5ztf6tcdlzren3nasghx4
+  oef_search.proto: bafybeifvmxnxg4cuxkj64iqeifyv7jl4ihxgsope7p4j74yotedboai7jm
+  oef_search_pb2.py: bafybeiht3pt2xgqmz4tptqlkzf2bus4gqcqkrv7e4was6egbyfydxrbr24
+  serialization.py: bafybeiaa66mm3vgcwgbgkbbuvrqryrn7kx7jtofpi6aida6trqgufc2sey
+  tests/__init__.py: bafybeiebv7wlew4kejoreeddxek6tq3qzejxkxc5kbch5pm4ojvykgd2om
+  tests/test_oef_search.py: bafybeiahbytplglft6nyko3pzufhu4fvjtu2uat5ok5ogzrmdfic6ipaaa
+  tests/test_oef_search_dialogues.py: bafybeidtatsgbixbhvln4jfhbkdvyo6kdq2lec7hagp5vmnqwlpckbgqpe
+  tests/test_oef_search_messages.py: bafybeieusyjvi4bwgqnq76xozh254zkhz2yhhnljbxb7h5qzspnfjszcvm
+fingerprint_ignore_patterns: []
+dependencies:
+  protobuf: {}

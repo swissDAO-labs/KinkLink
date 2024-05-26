@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
 #
-#   Copyright 2021-2022 Valory AG
+#   Copyright 2021-2024 Valory AG
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -81,7 +81,7 @@ class ABCIHandler(Handler):
         handler = getattr(self, request_type, None)
         if handler is None:  # pragma: nocover
             self.context.logger.warning(
-                f"cannot handle request '{request_type}', ignoring..."
+                f"Cannot handle request '{request_type}', ignoring..."
             )
             return
 

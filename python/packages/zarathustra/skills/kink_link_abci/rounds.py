@@ -30,6 +30,7 @@ from packages.valory.skills.abstract_round_abci.base import (
     BaseSynchronizedData,
     DegenerateRound,
     EventToTimeout,
+    get_name,
 )
 
 from packages.zarathustra.skills.kink_link_abci.payloads import (
@@ -56,6 +57,11 @@ class SynchronizedData(BaseSynchronizedData):
 
     This data is replicated by the tendermint application.
     """
+
+    @property
+    def most_voted_tx_hash(self) -> float:
+        """Get the most_voted_tx_hash."""
+        return cast(float, self.db.get_strict("most_voted_tx_hash"))
 
 
 class FeedbackProcessingRound(AbstractRound):
@@ -191,10 +197,10 @@ class KinkLinkAbciApp(AbciApp[Event]):
     }
     final_states: Set[AppState] = {TransactionSubmissionRound}
     event_to_timeout: EventToTimeout = {}
-    cross_period_persisted_keys: Set[str] = []
+    cross_period_persisted_keys: Set[str] = set()
     db_pre_conditions: Dict[AppState, Set[str]] = {
-        MatchmakingRound: [],
+        MatchmakingRound: {get_name(SynchronizedData.participants)},
     }
     db_post_conditions: Dict[AppState, Set[str]] = {
-        TransactionSubmissionRound: [],
+        TransactionSubmissionRound: {get_name(SynchronizedData.most_voted_tx_hash)},
     }
