@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
 #
-#   Copyright 2021-2023 Valory AG
+#   Copyright 2021-2024 Valory AG
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@
 # ------------------------------------------------------------------------------
 
 """This module contains the data classes for common apps ABCI application."""
+
 from enum import Enum
 from typing import Dict, Optional, Set, Tuple
 
@@ -29,8 +30,10 @@ from packages.valory.skills.abstract_round_abci.base import (
     CollectSameUntilAllRound,
     CollectSameUntilThresholdRound,
     DegenerateRound,
+    SlashingNotConfiguredError,
     get_name,
 )
+from packages.valory.skills.abstract_round_abci.models import BaseParams
 from packages.valory.skills.registration_abci.payloads import RegistrationPayload
 
 
@@ -56,12 +59,25 @@ class RegistrationStartupRound(CollectSameUntilAllRound):
     payload_class = RegistrationPayload
     synchronized_data_class = BaseSynchronizedData
 
+    @property
+    def params(self) -> BaseParams:
+        """Return the params."""
+        return self.context.params
+
     def end_block(self) -> Optional[Tuple[BaseSynchronizedData, Event]]:
         """Process the end of the block."""
         if not self.collection_threshold_reached:
             return None
 
-        self.synchronized_data.db.sync(self.common_payload)
+        try:
+            _ = self.context.state.round_sequence.offence_status
+            # only use slashing if it is configured and the `use_slashing` is set to True
+            if self.params.use_slashing:
+                self.context.state.round_sequence.enable_slashing()
+        except SlashingNotConfiguredError:
+            self.context.logger.warning("Slashing has not been enabled!")
+
+        self.context.state.round_sequence.sync_db_and_slashing(self.common_payload)
 
         synchronized_data = self.synchronized_data.update(
             participants=tuple(sorted(self.collection)),
@@ -97,7 +113,6 @@ class RegistrationRound(CollectSameUntilThresholdRound):
             > self.required_block_confirmations  # we also wait here as it gives more (available) agents time to join
         ):
             self.synchronized_data.db.sync(self.most_voted_payload)
-
             synchronized_data = self.synchronized_data.update(
                 participants=tuple(sorted(self.collection)),
                 synchronized_data_class=self.synchronized_data_class,

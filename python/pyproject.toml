@@ -17,15 +17,16 @@ version = "0.1.0"
 description = ""
 authors = [ "Karrenbelt <karrenbelt_git@pm.me>",]
 readme = "README.md"
-package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.11,<3.13"
+open-aea-ledger-ethereum-hwi = "^1.52.0"
+black = "^24.4.2"
+isort = "^5.13.2"
 
 [tool.poetry.group.autonomy.dependencies]
 open-autonomy = "^0.14.12"
 open-aea-cli-ipfs = "^1.52.0"
-open-aea-ledger-solana = "^1.52.0"
 open-aea-ledger-ethereum = "^1.52.0"
 open-aea-ledger-cosmos = "^1.52.0"
 open-aea-test-autonomy = "^0.14.12"
