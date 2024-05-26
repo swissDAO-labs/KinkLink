@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+package aea.zarathustra.kink_sync.v0_1_0;
+
+message KinkSyncMessage{
+
+  // Custom Types
+  message ErrorCode{
+    enum ErrorCodeEnum {
+      ERROR_CODE_ENUM_CONNECTION_ERROR = 0;
+      ERROR_CODE_ENUM_INVALID_MESSAGE = 1;
+      ERROR_CODE_ENUM_TIMEOUT = 2;
+    }
+    ErrorCodeEnum error_code = 1;
+  }
+
+
+  // Performatives and contents
+  message Initiate_Conversation_Performative{
+    string message = 1;
+  }
+
+  message Engage_Performative{
+    string message = 1;
+  }
+
+  message End_Conversation_Performative{
+    int32 score = 1;
+  }
+
+  message Error_Performative{
+    ErrorCode error_code = 1;
+    string error_msg = 2;
+  }
+
+
+  oneof performative{
+    End_Conversation_Performative end_conversation = 5;
+    Engage_Performative engage = 6;
+    Error_Performative error = 7;
+    Initiate_Conversation_Performative initiate_conversation = 8;
+  }
+}
