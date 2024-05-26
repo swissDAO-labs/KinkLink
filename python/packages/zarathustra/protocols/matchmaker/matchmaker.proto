@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package aea.zarathustra.matchmaker.v0_1_0;
+
+message MatchmakerMessage{
+
+  // Custom Types
+  message ErrorCode{
+    enum ErrorCodeEnum {
+      ERROR_CODE_ENUM_INVALID_MATCH_ID = 0;
+      ERROR_CODE_ENUM_INVALID_PERFORMATIVE = 1;
+      ERROR_CODE_ENUM_MATCH_NOT_FOUND = 2;
+      ERROR_CODE_ENUM_CONTACT_INFO_NOT_PROVIDED = 3;
+    }
+    ErrorCodeEnum error_code = 1;
+  }
+
+  message Preferences{
+    message Preferences {
+      int32 min_age = 1;
+      int32 max_age = 2;
+      repeated string preferred_genders = 3;
+      repeated string kinks = 4;
+    }
+  }
+
+  message UserInfo{
+    message UserInfo {
+      string agent_address = 1;
+      int32 age = 2;
+      string gender = 3;
+      string location = 4;
+      repeated string interests = 5;
+      optional string bio = 6;
+      bool verified = 7;
+    }
+  }
+
+
+  // Performatives and contents
+  message Matchmaking_Request_Performative{
+    UserInfo user_info = 1;
+    Preferences preferences = 2;
+  }
+
+  message Matchmaking_Response_Performative{
+    repeated string peer_ids = 1;
+  }
+
+  message Result_Performative{
+    bool success = 1;
+    bool block = 2;
+  }
+
+  message Error_Performative{
+    ErrorCode error_code = 1;
+    string error_msg = 2;
+  }
+
+
+  oneof performative{
+    Error_Performative error = 5;
+    Matchmaking_Request_Performative matchmaking_request = 6;
+    Matchmaking_Response_Performative matchmaking_response = 7;
+    Result_Performative result = 8;
+  }
+}

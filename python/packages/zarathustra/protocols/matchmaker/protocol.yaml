@@ -1,0 +1,21 @@
+name: matchmaker
+author: zarathustra
+version: 0.1.0
+protocol_specification_id: zarathustra/matchmaker:0.1.0
+type: protocol
+description: A protocol for agent matchmaking functionality.
+license: Apache-2.0
+aea_version: '>=1.0.0, <2.0.0'
+fingerprint:
+  __init__.py: bafybeie7g63af2xpu2f5hkhta5rvdy7hgztfkrzu4ey2vlwdokwg2zvi2a
+  custom_types.py: bafybeib47t2gf2bdkkkssjn43puldtaaud2caue5z2riud5zwci7ymhxlu
+  dialogues.py: bafybeidv4vchkpoizpnd62uqu4dodgltssukwwzkdptwssmum3zs64ikgq
+  matchmaker.proto: bafybeihzhbfesgfjx6m5pd54neur3buzoblk7fxl5m3c5enm6zqpx4cmfe
+  matchmaker_pb2.py: bafybeih7vb7zsx5urddm54wo34ueohep7pdgdl64mijxou36nfurcrf77u
+  message.py: bafybeiao7qg6jyxtjale42vke4f7z4tkchjqdvorravz37vdwll3pkem4y
+  serialization.py: bafybeieamzfwxn3dv3xunxiex3bpg6usskpilksmfhu2sdukvbbov5c5cq
+  tests/test_matchmaker_dialogues.py: bafybeieyenwusyo5cbipe2jt6e4gbba37es23msn4prmpzpfw7tuqmxc4y
+  tests/test_matchmaker_messages.py: bafybeia3cwlcwvdqgx74wzidk2k4rlrfwkoebdzsp7lmce7qm565xmu5wa
+fingerprint_ignore_patterns: []
+dependencies:
+  protobuf: {}

@@ -1,0 +1,73 @@
+# Matchmaker protocol
+
+## Description
+
+
+...
+
+## Specification
+
+```yaml
+---
+name: matchmaker
+author: zarathustra
+version: 0.1.0
+description: A protocol for agent matchmaking functionality.
+license: Apache-2.0
+aea_version: '>=1.0.0, <2.0.0'
+protocol_specification_id: zarathustra/matchmaker:0.1.0
+speech_acts:
+  matchmaking_request:
+    user_info: ct:UserInfo
+    preferences: ct:Preferences
+  matchmaking_response:
+    peer_ids: pt:list[pt:str]
+  result:
+    success: pt:bool
+    block: pt:bool
+  error:
+    error_code: ct:ErrorCode
+    error_msg: pt:str
+...
+---
+ct:ErrorCode: |
+  enum ErrorCodeEnum {
+      INVALID_MATCH_ID = 0;
+      INVALID_PERFORMATIVE = 1;
+      MATCH_NOT_FOUND = 2;
+      CONTACT_INFO_NOT_PROVIDED = 3;
+    }
+  ErrorCodeEnum error_code = 1;
+ct:UserInfo: |
+  message UserInfo {
+    string agent_address = 1;
+    int32 age = 2;
+    string gender = 3;
+    string location = 4;
+    repeated string interests = 5;
+    optional string bio = 6;
+    bool verified = 7;
+  }
+ct:Preferences: |
+  message Preferences {
+    int32 min_age = 1;
+    int32 max_age = 2;
+    repeated string preferred_genders = 3;
+    repeated string kinks = 4;
+  }
+...
+---
+initiation:
+- matchmaking_request
+reply:
+  matchmaking_request: [ matchmaking_response, error ]
+  matchmaking_response: [ result, error ]
+  result: [ ]
+  error: [ ]
+termination: [ result, error ]
+roles: { user, matchmaker }
+end_states: [ result, error ]
+keep_terminal_state_dialogues: true
+...
+
+```
