@@ -17,7 +17,40 @@ KinkLink address these issues by allowing users to spin up agents without reveal
 
 The agent then registers to a multi-agent matchmaker service which tries to match up their clients based on the user info and their states preferences (see [matchmaker protocol](https://github.com/swissDAO-labs/KinkLink/tree/main/python/packages/zarathustra/protocols/matchmaker)).
 
-Once a suitable match has been found by this service, their clients connect to one-another over a peer-to-peer network and engage in dialogue (see [kink_sync protocol](https://github.com/swissDAO-labs/KinkLink/tree/main/python/packages/zarathustra/protocols/kink_sync)). This is where the additional knowledge base of information provided by the user is leveraged. The agents keep track of how well the conversation is going. Once a threshold is reached, a high positive score, low negative score, or a timeout, the conversation ends. The agents report this score to each other, providing them feedback on the conversational  employed, as well as to the matchmaker service, such that it can update its rating system and improve its matchmaking capability.
+Once a suitable match has been found by this service, their clients connect to one-another over a peer-to-peer network and engage in dialogue. The Multi-agent service is a Finite State Machine, where state transition are based on Tendermint consensus, and looks as follows:
+
+```mermaid
+
+graph TB
+
+    subgraph "RegistrationStartUpAbciApp"
+       RegistrationRound
+    end
+
+    subgraph "KinkLinkAbciApp"
+        MatchmakingRound --> |NO_MATCHES| FeedbackProcessingRound
+        MatchmakingRound --> |MATCHES| PeerIDExchangeRound
+        PeerIDExchangeRound --> FeedbackProcessingRound
+        FeedbackProcessingRound --> |NO_FEEDBACK| TransactionSubmissionRound
+        FeedbackProcessingRound --> |FEEDBACK| RatingSystemUpdateRound
+        RatingSystemUpdateRound --> |DONE| TransactionSubmissionRound
+    end
+
+    subgraph "TransactionSettlementAbciApp"
+       TransactionSettlementRound
+    end
+    
+    subgraph "ResetAndPauseAbciApp"
+       ResetAndPauseRound
+    end
+   
+    RegistrationStartUpAbciApp --> MatchmakingRound
+    TransactionSubmissionRound --> TransactionSettlementAbciApp
+    TransactionSettlementAbciApp --> ResetAndPauseAbciApp
+    ResetAndPauseAbciApp --> MatchmakingRound
+```
+
+This is where the additional knowledge base of information provided by the user is leveraged (see [kink_sync protocol](https://github.com/swissDAO-labs/KinkLink/tree/main/python/packages/zarathustra/protocols/kink_sync)). The agents keep track of how well the conversation is going. Once a threshold is reached, a high positive score, low negative score, or a timeout, the conversation ends. The agents report this score to each other, providing them feedback on the conversational  employed, as well as to the matchmaker service, such that it can update its rating system and improve its matchmaking capability.
 
 When two agents establish a mutually positive interaction, the agent operator gets notified and prompted with the request to share contact information with the other client, such as a Telegram handle.
 
