@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # ------------------------------------------------------------------------------
 #
-#   Copyright 2024 valory
+#   Copyright 2024 zarathustra
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
@@ -17,14 +17,9 @@
 #
 # ------------------------------------------------------------------------------
 
-"""
-This module contains the support resources for the ledger_api protocol.
+"""This module contains the implementation of the default skill."""
 
-It was created with protocol buffer compiler version `libprotoc 24.3` and aea protocol generator version `1.0.0`.
-"""
-
-from packages.valory.protocols.ledger_api.message import LedgerApiMessage
-from packages.valory.protocols.ledger_api.serialization import LedgerApiSerializer
+from aea.configurations.base import PublicId
 
 
-LedgerApiMessage.serializer = LedgerApiSerializer
+PUBLIC_ID = PublicId.from_str("zarathustra/kink_link:0.1.0")

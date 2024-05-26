@@ -24,6 +24,7 @@ from typing import Callable, Type
 from unittest import mock
 
 import pytest
+
 from aea.common import Address
 from aea.exceptions import AEAEnforceError
 from aea.mail.base import Envelope

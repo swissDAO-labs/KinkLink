@@ -1,26 +1,15 @@
-name: reset_pause_abci
-author: valory
+name: kink_link
+author: zarathustra
 version: 0.1.0
 type: skill
-description: ABCI application for resetting and pausing app executions.
+description: The scaffold skill is a scaffold for your own skill implementation.
 license: Apache-2.0
 aea_version: '>=1.0.0, <2.0.0'
 fingerprint:
-  README.md: bafybeigyx3zutnbq2sqlgeo2hi2vjgpmnlspnkyh4wemjfrqkrpel27bwi
-  __init__.py: bafybeicx55fcmu5t2lrrs4wqi6bdvsmoq2csfqebyzwy6oh4olmhnvmelu
-  behaviours.py: bafybeich7tmipn2zsuqsmhtbrmmqys3mpvn3jctx6g3kz2atet2atl3j6q
-  dialogues.py: bafybeigabhaykiyzbluu4mk6bbrmqhzld2kyp32pg24bvjmzrrb74einwm
-  fsm_specification.yaml: bafybeietrxvm2odv3si3ecep3by6rftsirzzazxpmeh73yvtsis2mfaali
-  handlers.py: bafybeie22h45jr2opf2waszr3qt5km2fppcaahalcavhzutgb6pyyywqxq
-  models.py: bafybeiagj2e73wvzfqti6chbgkxh5tawzdjwqnxlo2bcfa5lyzy6ogzh2u
-  payloads.py: bafybeihychpsosovpyq7bh6aih2cyjkxr23j7becd5apetrqivvnolzm7i
-  rounds.py: bafybeifi2gpj2piilxtqcvv6lxhwpnbl7xs3a3trh3wvlv2wihowoon4tm
-  tests/__init__.py: bafybeiclijinxvycj7agcagt2deuuyh7zxyp7k2s55la6lh3jghzqvfux4
-  tests/test_behaviours.py: bafybeigblrmkjci6at74yetaevgw5zszhivpednbok7fby4tqn7zt2vemy
-  tests/test_dialogues.py: bafybeif7pe7v34cfznzv4htyuevx733ersmk4bqjcgajn2535jmuujdmzm
-  tests/test_handlers.py: bafybeiggog2k65ijtvqwkvjvmaoo6khwgfkeodddzl6u76gcvvongwjawy
-  tests/test_payloads.py: bafybeifj343tlaiasebfgahfxehn4oi74omgah3ju2pze2fefoouid2zdq
-  tests/test_rounds.py: bafybeig4do5jwnzcpwyklbxh5k7trysl4u2zsagwtf6etqsdtb6yd5s4n4
+  __init__.py: bafybeidfo7tzxvqpdbocani42qqophkploqjld72d5nopr2wyp7vhw7yy4
+  behaviours.py: bafybeihrgizb56lkqfjg6wf53m5livkms3rqvezfwz2xen4okescipl4c4
+  composition.py: bafybeidoqyrssx2aublbbuzjzbfblsvhli5vunutrsjeazu74pwyiv2d3y
+  handlers.py: bafybeiascerrdb47rgqhfmyq24fjyyobbhocfpaslouubzgo6iswrzkhky
 fingerprint_ignore_patterns: []
 connections: []
 contracts: []
@@ -30,7 +19,7 @@ skills:
 behaviours:
   main:
     args: {}
-    class_name: ResetPauseABCIConsensusBehaviour
+    class_name: KinkLinkRoundBehaviour
 handlers:
   abci:
     args: {}
@@ -78,8 +67,8 @@ models:
       cleanup_history_depth: 1
       cleanup_history_depth_current: null
       drand_public_key: 868f005eb8e6e4ca0a47c8a77ceaa5309a47978a7c71bc5cce96366b5d7a569937c529eeda66c7293784a9402801af31
+      finalize_timeout: 60.0
       genesis_config:
-        genesis_time: '2022-05-20T16:00:21.735122717Z'
         chain_id: chain-c4daS1
         consensus_params:
           block:
@@ -87,14 +76,18 @@ models:
             max_gas: '-1'
             time_iota_ms: '1000'
           evidence:
-            max_age_num_blocks: '100000'
             max_age_duration: '172800000000000'
+            max_age_num_blocks: '100000'
             max_bytes: '1048576'
           validator:
             pub_key_types:
             - ed25519
           version: {}
+        genesis_time: '2022-05-20T16:00:21.735122717Z'
         voting_power: '10'
+      history_check_timeout: 1205
+      ipfs_domain_name: null
+      keeper_allowed_retries: 3
       keeper_timeout: 30.0
       max_attempts: 10
       max_healthcheck: 120
@@ -106,9 +99,13 @@ models:
       retry_attempts: 400
       retry_timeout: 3
       round_timeout_seconds: 30.0
-      service_id: reset_pause_abci
+      service_id: kink_link
       service_registry_address: null
-      setup: {}
+      setup:
+        all_participants:
+        - '0x0000000000000000000000000000000000000000'
+        consensus_threshold: null
+        safe_contract_address: '0x0000000000000000000000000000000000000000'
       share_tm_config_on_startup: false
       sleep_time: 1
       tendermint_check_sleep_delay: 3
@@ -117,7 +114,7 @@ models:
       tendermint_p2p_url: localhost:26656
       tendermint_url: http://localhost:26657
       tx_timeout: 10.0
-      use_termination: false
+      validate_timeout: 1205
     class_name: Params
   requests:
     args: {}
@@ -132,4 +129,4 @@ models:
     args: {}
     class_name: TendermintDialogues
 dependencies: {}
-is_abstract: true
+is_abstract: false
